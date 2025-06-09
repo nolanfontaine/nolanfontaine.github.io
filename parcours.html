@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Parcours</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #203a43;
+      color: #f9f9f9;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(54, 89, 100, 0.8);
+      color: #ffffff;
+      padding: 1em 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4aa9f7;
+    }
+
+    .nav-laser {
+      background-color: #4aa9f7;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4aa9f7, 0 0 20px #4aa9f7;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-laser:hover {
+      background-color: #4a87f7;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #4a87f7, 0 0 30px #4a87f7;
+    }
+
+    .timeline-section {
+      padding: 10rem 2rem 6rem;
+      background-color: #203a43;
+      position: relative;
+    }
+
+    .timeline-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      color: #ffffff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #4aa9f7, #00eaff);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      background-color: #1f2a30;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px #00f8ff, 0 0 20px #00f8ff;
+      width: 40%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00f8ff, 0 0 30px #00f8ff;
+    }
+
+    .timeline-item.left {
+      align-self: flex-start;
+    }
+
+    .timeline-item.right {
+      align-self: flex-end;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: #4aa9f7;
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    .timeline-item.left::after {
+      right: -10px;
+    }
+
+    .timeline-item.right::after {
+      left: -10px;
+    }
+
+    .timeline-item h3 {
+      color: #fff;
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .timeline-item p {
+      color: #ccc;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 10px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 3rem;
+      }
+      .timeline-item.left,
+      .timeline-item.right {
+        align-self: flex-start;
+      }
+      .timeline-item::after {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="propos.html">À propos de moi</a></li>
+        <li><a href="projet.html">Mes projets</a></li>
+        <li><a href="parcours.html" class="nav-laser">Mon parcours</a></li>
+        <li><a href="bilan.html">Bilan Personnel</a></li>
+        <li><a href="contacter.html">Me contacter</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <section class="timeline-section">
+    <h1 class="timeline-title" data-aos="fade-down">Mon Parcours Scolaire</h1>
+    <div class="timeline">
+      <div class="timeline-item left" data-aos="fade-right">
+        <h3>2023 – Bac Général</h3>
+        <p>Obtention du baccalauréat général avec les spécialités Mathématiques et NSI (Numérique et Sciences Informatiques).</p>
+      </div>
+      <div class="timeline-item right" data-aos="fade-left">
+        <h3>2023 - 2024 BUT Informatique (1re année)</h3>
+        <p>Première année de BUT Informatique à l'IUT de La Rochelle. Découverte du développement, de la programmation, des algorithmes.</p>
+      </div>
+      <div class="timeline-item left" data-aos="fade-left">
+        <h3>2024-2027 – BUT Science des Données</h3>
+        <p>Actuellement en formation à l'IUT de Niort. J'apprend à stocker, traiter, analyser des données.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilan Perso - Nolan Fontaine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #203a43;
+      font-family: 'Outfit', sans-serif;
+      color: #f9f9f9;
+    }
+
+    header {
+      background: rgba(54, 89, 100, 0.8);
+      color: #fff;
+      padding: 1em 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4aa9f7;
+    }
+
+    .nav-laser {
+      background-color: #4aa9f7;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4aa9f7, 0 0 20px #4aa9f7;
+      transition: all 0.3s ease;
+    }
+
+    .nav-laser:hover {
+      background-color: #4a87f7;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #4a87f7, 0 0 30px #4a87f7;
+    }
+
+    .logos-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+
+    .logos-section img {
+      max-height: 80px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .logos-section img:hover {
+      transform: scale(1.1);
+    }
+
+    .intro-section {
+      background-color: #1f2a30;
+      padding: 6rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .intro-section h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .intro-section p {
+      font-size: 1.4rem;
+      color: #ccc;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section1 {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background-color: #203a43;
+    }
+
+    .section1 h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .section1 p {
+      max-width: 1000px;
+      font-size: 1.3rem;
+      margin: 1rem auto;
+      color: #ccc;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 992px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="propos.html">À propos de moi</a></li>
+        <li><a href="projet.html">Mes projets</a></li>
+        <li><a href="parcours.html">Mon parcours</a></li>
+        <li><a href="bilan.html" class="nav-laser">Bilan Personnel</a></li>
+        <li><a href="contacter.html">Me contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="intro-section">
+    <!-- Logos des institutions -->
+    <section class="logos-section">
+      <a href="https://www.univ-poitiers.fr/vivre-les-campus/nos-campus/campus-de-niort/"><img src="img/logo-univ.png" alt="Logo Université" /></a>
+      <a href="https://iutp.univ-poitiers.fr/liut-poitiers-niort-chatellerault/les-sites-de-formation/niort/"><img src="img/logo-iut.png" alt="Logo IUT" /></a>
+      <a href="https://iutp.univ-poitiers.fr/sd/"><img src="img/logo-sd.png" alt="Logo BUT Science des Données" /></a>
+    </section>
+    <h1>Compte rendu personnel annuel</h1>
+    <p>BUT science des données : première année</p>
+  </section>
+
+  <section class="section1">
+    <h1>Introduction</h1>
+    <p>À la fin de ma terminale, j’ai d’abord choisi de poursuivre mes études en BUT Informatique à La Rochelle, influencé par mon entourage familial et mon intérêt pour les nouvelles technologies. Cependant, je me suis rapidement rendu compte que ce cursus ne me correspondait pas pleinement, notamment à cause de difficultés en programmation. Après réflexion et accompagnement, j’ai décidé de me réorienter vers un BUT Science des Données à Niort. Cette formation me semblait plus adaptée à mes appétences en mathématiques et à mon envie de mieux comprendre le monde à travers les données. Dès les premières semaines, j’ai senti que j’avais fait le bon choix.</p>
+    
+    <h1>Bilan Académique</h1>
+    <p>Je suis très satisfait de cette première année, qui s’est déroulée de manière fluide et positive. Mon intégration dans la formation et dans le nouvel environnement s’est faite rapidement et sans difficulté. Je me suis tout de suite senti à l’aise, aussi bien avec les enseignements qu’avec le rythme de travail.
+
+    En mathématiques comme en programmation, j’ai su m’adapter rapidement aux exigences du BUT Science des Données. Ayant déjà des bases solides, notamment grâce à mon parcours en BUT Informatique, je n’ai rencontré aucun obstacle particulier. Les cours de mathématiques et de statistiques m’ont permis de renforcer mes acquis, et j’ai réussi à maintenir un bon niveau tout au long de l’année.
+
+    La communication, tant à l’oral qu’à l’écrit, s’est également bien passée. Les différents travaux de groupe et présentations m’ont permis d’être à l’aise dans mes échanges et de développer davantage mes compétences relationnelles. En résumé, cette première année a été très enrichissante, et je l’ai abordée avec motivation, rigueur et sérénité.</p>
+
+    <h1>Compétences Acquises</h1>
+    <p>Cette année m’a permis de découvrir ou d’approfondir plusieurs langages et outils. J’ai consolidé mes bases en Python et j’ai appris à utiliser R, que j’ai particulièrement apprécié pour son efficacité dans l’analyse statistique. J’ai aussi découvert l’environnement Excel avec ses formules et le langage VBA, très utile pour l’automatisation de certaines tâches.
+
+    Les projets de groupe ont été très formateurs. Ils m’ont appris à mieux collaborer, à répartir les tâches de manière stratégique et à m’organiser selon les délais. Cela m’a permis de progresser non seulement techniquement, mais aussi humainement.</p>
+
+    <h1>Réflexion et Développement Personnel</h1>
+    <p>Cette année a été marquée par une vraie prise de conscience sur mes capacités d’adaptation. Passer d’un BUT informatique à un BUT science des données n’a pas été une décision facile, mais je ne la regrette pas. J’ai appris à mieux me connaître, à reconnaître mes forces et mes axes d’amélioration.
+
+    La gestion du temps et le travail en autonomie sont deux compétences que j’ai beaucoup développées, notamment en fin d’année avec la charge de projets à mener simultanément. Je suis également plus à l’aise avec la prise d’initiative, que ce soit dans les projets en groupe ou dans mon apprentissage personnel.</p>
+  </section>
+
+</body>
+</html>

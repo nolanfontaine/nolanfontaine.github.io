@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Analyse Électorale - NFP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4aa9f7;
+      --secondary: #203a43;
+      --accent: #365964;
+      --text: #f9f9f9;
+      --card-bg: #1f2a30;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: var(--text);
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    /* Header - identique à votre exemple */
+    header {
+      background: rgba(54, 89, 100, 0.8);
+      color: #ffffff;
+      padding: 1em 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav ul li a:hover {
+      color: #4aa9f7;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #4aa9f7;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .nav-laser {
+      background-color: #4aa9f7;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4aa9f7, 0 0 20px #4aa9f7;
+      transition: all 0.3s ease;
+    }
+
+    .nav-laser:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px #4aa9f7, 0 0 25px #4aa9f7;
+    }
+
+    /* Contenu principal */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(74, 169, 247, 0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(to right, #4aa9f7, #a5d8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(74, 169, 247, 0.3);
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 1.5rem auto;
+      opacity: 0.9;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--primary);
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+      40% {transform: translateY(-20px) translateX(-50%);}
+      60% {transform: translateY(-10px) translateX(-50%);}
+    }
+
+    /* Sections */
+    .project-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
+    }
+
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      bottom: -10px;
+      left: 20%;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    /* Cartes */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: rgba(31, 42, 48, 0.7);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(74, 169, 247, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary), transparent);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      border-color: rgba(74, 169, 247, 0.3);
+    }
+
+    .card h2 {
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .card h2 i {
+      margin-right: 12px;
+      font-size: 1.5rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.8rem;
+      line-height: 1.5;
+    }
+
+    .card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Notes */
+    .notes-section {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .note-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .note {
+      background: linear-gradient(145deg, #365964, #2c4a57);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 220px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(74, 169, 247, 0.2);
+    }
+
+    .note:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      border-color: rgba(74, 169, 247, 0.4);
+    }
+
+    .note h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+
+    .note-value {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #4aa9f7, #a5d8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(16, 28, 34, 0.9);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .footer-button {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0.8rem 1.5rem;
+      background: linear-gradient(to right, #4aa9f7, #a5d8ff);
+      color: #1f2a30;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(74, 169, 247, 0.2);
+    }
+
+    .footer-button:hover {
+      background: linear-gradient(to right, #a5d8ff, #4aa9f7);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74, 169, 247, 0.3);
+    }
+
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .note {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+      }
+      
+      nav ul li {
+        margin: 5px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header identique à votre exemple -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="propos.html">À propos de moi</a></li>
+        <li><a href="projet.html" class="nav-laser">Mes projets</a></li>
+        <li><a href="parcours.html">Mon parcours</a></li>
+        <li><a href="bilan.html">Bilan Personnel</a></li>
+        <li><a href="contacter.html">Me contacter</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="hero-title floating" data-aos="fade-down">Analyse Électorale NFP</h1>
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Analyse des facteurs socio-économiques influençant les résultats du Nouveau Front Populaire</p>
+    <div class="scroll-down" data-aos="fade-up" data-aos-delay="400">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- Description du projet -->
+  <section class="project-section">
+    <h2 class="section-title" data-aos="fade-up">Description du Projet</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="zoom-in">
+        <h2><i class="fas fa-project-diagram"></i> Contexte</h2>
+        <p>Dans le cadre d’une étude statistique, je me suis penché sur l’analyse de variables socio-démographiques issues d’un tableur Excel. Ce jeu de données, composé d’indicateurs tels que la structure par âge, les professions exercées ou encore le taux de chômage, m'a permis de mener une exploration approfondie visant à mieux comprendre les dynamiques électorales observées en faveur du Nouveau Front Populaire (NFP) dans trois départements français sélectionnés.
+
+        </p>
+      </div>
+      
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h2><i class="fas fa-bullseye"></i> Objectif</h2>
+        <p>L’objectif était d’identifier les mécanismes socio-économiques pouvant expliquer ces succès électoraux. Pour ce faire, nous avons conduit une étude statistique approfondie, appuyée par des visualisations variées (graphes explicatifs, tableaux croisés dynamiques), afin de faire ressortir les relations significatives entre les indicateurs démographiques et les performances électorales observées.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu du projet -->
+  <section class="project-section">
+    <h2 class="section-title" data-aos="fade-up">Méthodologie</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-right">
+        <h2><i class="fas fa-chart-line"></i> Analyse des données</h2>
+        <ul>
+          <li>Exploration et préparation des données socio-démographiques</li>
+          <li>Traitement et fiabilisation des informations collectées</li>
+          <li>Étude des relations statistiques entre les variables clés</li>
+          <li>Conception de supports visuels pertinents (diagrammes, tableaux synthétiques)</li>
+          <li>Définition de segments d’électeurs représentatifs</li>
+        </ul>
+      </div>
+      
+      <div class="card" data-aos="fade-left">
+        <h2><i class="fas fa-file-alt"></i> Production finale</h2>
+        <ul>
+          <li>Rédaction d’un document de synthèse en vue des échéances électorales</li>
+          <li>Mise en lumière des profils électoraux caractéristiques du NFP</li>
+          <li>Élaboration de recommandations stratégiques fondées sur l’analyse des données</li>
+          <li>Création de supports visuels facilitant l’aide à la décision</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies et compétences -->
+  <section class="project-section">
+    <h2 class="section-title" data-aos="fade-up">Technologies & Compétences</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="flip-up">
+        <h2><i class="fas fa-laptop-code"></i> Technologies utilisées</h2>
+        <ul>
+          <li>Maîtrise des fonctions statistiques avancées sous Excel</li>
+          <li>Conception de visualisations interactives et évolutives</li>
+          <li>Exploitation approfondie des tableaux croisés pour l’analyse multidimensionnelle</li>
+          <li>Utilisation d’outils de visualisation de données pour appuyer l’interprétation des résultats</li>
+        </ul>
+      </div>
+      
+      <div class="card" data-aos="flip-up" data-aos-delay="200">
+        <h2><i class="fas fa-star"></i> Compétences acquises</h2>
+        <ul>
+          <li>Exploration initiale et structuration des jeux de données</li>
+          <li>Analyse statistique et interprétation des indicateurs clés</li>
+          <li>Création de visualisations percutantes pour faciliter la compréhension</li>
+          <li>Rédaction de livrables synthétiques à visée décisionnelle</li>
+          <li>Présentation claire et argumentée des conclusions de l’étude</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section notes-section">
+    <h2 class="section-title" data-aos="fade-up">Évaluation</h2>
+    <div class="note-box">
+      <div class="note" data-aos="zoom-in" data-aos-delay="0">
+        <h3>Partie technique</h3>
+        <div class="note-value">17.5/20</div>
+      </div>
+      
+      <div class="note" data-aos="zoom-in" data-aos-delay="200">
+        <h3>conception générale, commentaires et structure</h3>
+        <div class="note-value">16/20</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div style="margin-top: 1.5rem;">
+      <a href="projet.html" class="footer-button">Retour aux projets</a>
+      <a href="projets/SAE-Nolan_Fontaine.pdf" download class="footer-button">Télécharger le projet</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-quart'
+    });
+    
+    // Animation pour le défilement
+    document.querySelector('.scroll-down').addEventListener('click', () => {
+      window.scrollBy({
+        top: window.innerHeight - 100,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

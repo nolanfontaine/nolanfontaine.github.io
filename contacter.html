@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Me Contacter - Nolan Fontaine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <style>
+    /* Palette modernisée */
+    :root {
+      --bg: #203a43;
+      --card: #1a2238;
+      --text: #e5ecf4;
+      --subtext: #90a4ae;
+      --primary: #4ea8de;
+      --secondary: #d946ef;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #4a87f7;;
+    }
+
+    header {
+      background: rgba(54, 89, 100, 0.8);
+      color: #ffffff;
+      padding: 1em 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4aa9f7;
+    }
+
+    .nav-laser {
+      background-color: #4aa9f7;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4aa9f7, 0 0 20px #4aa9f7;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-laser:hover {
+      background-color: #4a87f7;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #4a87f7, 0 0 30px #4a87f7;
+    }
+
+    /* Section Contact */
+    .contact-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 3em;
+      color:#ffffff;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 1.2em;
+      color: var(--subtext);
+      margin-bottom: 60px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .contact-card {
+      background-color: #203a43;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 10px #00f8ff, 0 0 20px #00f8ff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00f8ff, 0 0 30px #00f8ff; /* Ombre bleu néon au survol */
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .contact-card i {
+      font-size: 2.5em;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .contact-card p {
+      font-size: 1em;
+      color: var(--subtext);
+    }
+
+    @media (max-width: 600px) {
+      .section-title {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="propos.html">À propos de moi</a></li>
+          <li><a href="projet.html">Mes projets</a></li>
+          <li><a href="parcours.html">Mon parcours</a></li>
+          <li><a href="bilan.html">Bilan Personnel</a></li>
+          <li><a href="contacter.html" class="nav-laser">Me contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section Contact -->
+  <section class="contact-section">
+    <h1 class="section-title" data-aos="fade-up">Me contacter</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Vous souhaitez échanger, poser une question ou proposer un projet ? Voici mes coordonnées :
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card" data-aos="fade-up">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p><a href="mailto:nolan.fontaine@email.com">nolanfontainepro@email.com</a></p>
+      </div>
+
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-phone"></i>
+        <h3>Téléphone</h3>
+        <p><a href="tel:+33612345678">+33 7 69 14 91 56</a></p>
+      </div>
+
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Localisation</h3>
+        <p>Angers/Niort, France</p>
+      </div>
+
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-file-alt"></i>
+        <h3>CV</h3>
+        <p><a href="projets/CV.pdf" target="_blank">Télécharger mon CV</a></p>
+      </div>
+
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
+        <i class="fab fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank">Voir mon profil</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+</body>
+</html>

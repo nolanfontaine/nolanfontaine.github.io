@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio de Nolan Fontaine</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 80px;
+      background-color: #203a43;
+      color: white;
+    }
+
+    header {
+      background: rgba(54, 89, 100, 0.8);
+      color: #ffffff;
+      padding: 1em 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4aa9f7;
+    }
+
+    .nav-laser {
+      background-color: #4aa9f7;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4aa9f7, 0 0 20px #4aa9f7;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-laser:hover {
+      background-color: #4a87f7;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #4a87f7, 0 0 30px #4a87f7;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 5rem 2rem;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #4aa9f7;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .cta {
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      margin-right: 1rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .hero-img {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #4aa9f7;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-img img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text, .hero-img {
+        max-width: 100%;
+      }
+
+      .cta a {
+        margin: 10px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+          <li><a href="index.html" class="nav-laser">Accueil</a></li>
+          <li><a href="propos.html">À propos de moi</a></li>
+          <li><a href="projet.html">Mes projets</a></li>
+          <li><a href="parcours.html">Mon parcours</a></li>
+          <li><a href="bilan.html">Bilan Personnel</a></li>
+          <li><a href="contacter.html">Me contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bienvenue sur mon Portfolio</h1>
+      <p>Je m'appelle Nolan Fontaine, étudiant en Science des Données passionné par l’analyse, les projets collaboratifs et l’innovation numérique. Découvrez ici mes projets, mes compétences et mon parcours.</p>
+      <div class="cta">
+        <a href="propos.html" class="nav-laser">En savoir plus sur moi</a>
+        <a href="projet.html" class="nav-laser">Voir mes projets</a>
+        <a href="contacter.html" class="nav-laser">Me contacter</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/photo.jpg" alt="Photo de Nolan Fontaine">
+    </div>
+  </section>
+</body>
+</html>

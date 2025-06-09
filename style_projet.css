@@ -1,0 +1,212 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+      font-family: Arial, sans-serif;
+      background: rgba(54, 89, 100, 0.8); /* Couleur #365964 avec 80% d'opacité */
+      color: #ffffff;
+      padding: 1em 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4aa9f7;
+    }
+
+    .nav-laser {
+      background-color: #4aa9f7;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #4aa9f7, 0 0 20px #4aa9f7;
+      transition: all 0.3s ease;
+    }
+
+    .nav-laser:hover {
+      background-color: #4a87f7;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #4a87f7, 0 0 30px #4a87f7;
+    }
+
+main {
+    background: #203a43;
+    color: #fff;
+    padding-top: 80px;
+    padding-bottom: 100px; 
+    min-height: 100vh;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3em;
+    display: inline-block; 
+}
+
+.neon-bar {
+    height: 4px; /* Hauteur de la barre */
+    background: linear-gradient(to right, #459ff8, #00f8ff); /* Dégradé uniforme bleu néon de gauche à droite */
+    width: 100%; /* La barre prend toute la largeur de son conteneur */
+    max-width: 650px; /* La largeur maximale de la barre est égale à la largeur du titre */
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px #00f8ff, 0 0 30px #00f8ff; /* Ombre bleue néon */
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Position de départ */
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-12px); /* Légère élévation */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0); /* Retour à la position initiale */
+        opacity: 1;
+    }
+}
+
+/* Colonnes de projets flottantes */
+.project-columns {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.project-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 48%;
+    animation: float 4s ease-in-out infinite; /* Animation de flottement */
+}
+
+.timeline-item {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00f8ff, 0 0 20px #00f8ff; /* Ombre bleu néon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f8ff, 0 0 30px #00f8ff; /* Ombre bleu néon au survol */
+}
+
+
+.timeline-date {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #4a87f7;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.timeline-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+
+.timeline-item:hover .timeline-bg {
+    transform: scale(1.05); 
+}
+
+.timeline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: background-color 0.4s ease, opacity 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.timeline-item:hover .timeline-overlay {
+    background-color: rgba(0, 0, 0, 0.3); 
+    opacity: 1;
+}
+
+.timeline-overlay h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    word-wrap: break-word;
+    white-space: normal;    
+    text-align: center;     
+    padding: 0 10px;       
+}
+
+.timeline-item:hover .timeline-bg {
+    transform: scale(1.05);
+}
+
+.timeline-item:hover .timeline-overlay {
+    background-color: rgba(0, 0, 0, 0.9); /* Ombre plus marquée au survol */
+    opacity: 1;
+}
+
+.btn {
+    background-color: #00cbe0;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #008197;
+    transform: scale(1.05);
+}
