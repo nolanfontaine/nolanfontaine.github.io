@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>À propos de moi | Nolan Fontaine</title>
+    <meta name="description" content="Découvrez le parcours, les passions et l'histoire de Nolan Fontaine, étudiant en Data Science.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B0C15',
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Styles spécifiques pour le Carrousel Voyages */
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 700px;
+            overflow: visible;
+            position: relative;
+        }
+
+        .carousel-item {
+            transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .carousel-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .carousel-item.center {
+            width: 500px;
+            transform: scale(1);
+            opacity: 1;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .carousel-item.side {
+            width: 350px;
+            opacity: 0.5;
+            transform: scale(0.85);
+            filter: brightness(0.6);
+            z-index: 5;
+        }
+
+        .carousel-item.left { margin-right: -100px; transform-origin: right center; }
+        .carousel-item.right { margin-left: -100px; transform-origin: left center; }
+
+        .carousel-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carousel-caption {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #94a3b8;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .center-caption {
+            font-size: 18px;
+            font-weight: 700;
+            color: #3B82F6;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        @media screen and (max-width: 768px) {
+            .carousel-item.center { width: 260px; }
+            .carousel-item.side { width: 180px; transform: scale(0.75); }
+            .carousel-item.left { margin-right: -60px; }
+            .carousel-item.right { margin-left: -60px; }
+            .carousel { width: 100%; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-20">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500 group-hover:text-purple-500 transition-colors">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">À propos</a>
+                <a href="projet.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes projets</a>
+                <a href="competences.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Compétences</a>
+                <a href="notes.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes Notes</a>
+                <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+
+            <a href="contacter.html" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-bold rounded-lg transition-all flex items-center gap-2">
+                <span>Me contacter</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">À propos de moi</h1>
+            <p class="text-lg text-slate-400">Découvrez qui je suis, mon parcours et mes passions.</p>
+        </div>
+
+        <section class="mb-20">
+            <div class="glass p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
+                
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-user-graduate text-blue-500"></i> Mon Histoire
+                </h2>
+                
+                <div class="space-y-6 text-slate-300 leading-relaxed text-justify">
+                    <p>
+                        Je m'appelle Nolan Fontaine, j'ai 20 ans et je suis passionné de sport et de découvertes depuis toujours. J'ai pratiqué le football pendant plus de dix ans en club, un sport qui m'a appris la rigueur, la persévérance et le sens du collectif. En parallèle, je suis également un grand amateur de voyages, une passion qui nourrit ma curiosité et mon ouverture sur le monde.
+                    </p>
+                    <p>
+                        Actuellement, je suis étudiant en BUT Science des Données à l'IUT de Niort. Avant cela, j'ai obtenu mon baccalauréat avec les spécialités Mathématiques et NSI (Numérique et Sciences Informatiques), avec la mention Bien. J'ai d'abord débuté un BUT Informatique à La Rochelle, mais mon goût prononcé pour les chiffres et la logique analytique m'a naturellement poussé à me réorienter vers ce cursus plus statistique.
+                    </p>
+                    <p>
+                        Le BUT Science des Données propose une formation complète mêlant statistiques, informatique décisionnelle, analyse de données et modélisation. C'est un domaine en pleine expansion qui m'offre l'opportunité de développer une double compétence très recherchée : la maîtrise technique des outils informatiques (Python, SQL, R) et la capacité à interpréter intelligemment les données.
+                    </p>
+                    <p>
+                        Je suis quelqu'un de rigoureux, curieux et à l'écoute. J'aime travailler en équipe, une force héritée de mes années sur les terrains de football, tout en sachant faire preuve d'autonomie lorsque c'est nécessaire. Ces qualités me permettent de m'investir pleinement dans mes projets et de toujours viser l'excellence, quel que soit le contexte.
+                    </p>
+                    <p>
+                        Sur ce site, vous trouverez une page dédiée à mes projets, où je partage certaines de mes réalisations académiques et personnelles. Ces expériences m'ont permis de mettre en pratique mes compétences en traitement de données et en modélisation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 space-y-4">
+                    <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                        <i class="fas fa-futbol text-purple-500"></i> Ma Passion pour le Football
+                    </h2>
+                    <div class="text-slate-300 leading-relaxed text-justify space-y-4 mt-6">
+                        <p>
+                            En dehors de mes études, j’ai longtemps été passionné par le football. J’ai pratiqué en club pendant <strong>10 années</strong> dans des clubs de la périphérie d’Angers.
+                        </p>
+                        <p>
+                            Même si j’ai arrêté la pratique active depuis, ce sport m’a beaucoup apporté. Il m’a enseigné des valeurs essentielles telles que la <strong>discipline, l’esprit d’équipe, la persévérance et le sens de l’effort</strong>. Ces expériences ont contribué à forger ma rigueur et ma capacité à relever les défis.
+                        </p>
+                        <p>
+                            Aujourd’hui, le football reste une passion profonde. Je suis un fervent supporter d’<strong>Angers SCO</strong>, le club de ma ville, et je suis avec enthousiasme chaque match. Ce sport rassemble les gens et crée des émotions uniques que j’apprécie toujours autant.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000"></div>
+                    <img src="img/sco.jpg" alt="Match de football Angers SCO" class="relative rounded-2xl w-full object-cover shadow-2xl border border-white/10" />
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10 text-center">
+            <h2 class="text-3xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+                <i class="fas fa-earth-americas text-blue-500"></i> Mes Voyages
+            </h2>
+            <p class="text-slate-400 mb-10">Une ouverture sur le monde et les différentes cultures.</p>
+
+            <div class="carousel-container">
+                <button class="prev-btn w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+
+                <div class="carousel">
+                    </div>
+
+                <button class="next-btn w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-32 py-12 border-t border-white/5 bg-[#0B0C15]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
+                <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:nolan.fontaine@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const images = [
+            { src: "img/belgique.jpg", alt: "Belgique" },
+            { src: "img/italie.png", alt: "Italie" },
+            { src: "img/espagne.jpg", alt: "Espagne" },
+            { src: "img/portugal.jpg", alt: "Portugal" },
+            { src: "img/tchequie.jpg", alt: "Tchéquie" },
+            { src: "img/croatie.webp", alt: "Croatie" },
+            { src: "img/angleterre.png", alt: "Angleterre" },
+            { src: "img/corse.jpg", alt: "Corse" }
+        ];
+
+        const carousel = document.querySelector(".carousel");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+
+        let currentIndex = 0;
+
+        function renderCarousel() {
+            carousel.innerHTML = "";
+            const total = images.length;
+            const leftIndex = (currentIndex - 1 + total) % total;
+            const rightIndex = (currentIndex + 1) % total;
+
+            carousel.appendChild(createCarouselItem(images[leftIndex], "carousel-item side left"));
+            carousel.appendChild(createCarouselItem(images[currentIndex], "carousel-item center"));
+            carousel.appendChild(createCarouselItem(images[rightIndex], "carousel-item side right"));
+        }
+
+        function createCarouselItem(image, positionClass) {
+            const itemContainer = document.createElement("div");
+            itemContainer.className = "carousel-wrapper";
+
+            const div = document.createElement("div");
+            div.className = positionClass;
+
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.alt;
+            div.appendChild(img);
+
+            const caption = document.createElement("p");
+            caption.textContent = image.alt;
+            caption.className = "carousel-caption";
+
+            if (positionClass.includes("center")) {
+                caption.classList.add("center-caption");
+            }
+
+            itemContainer.appendChild(div);
+            itemContainer.appendChild(caption);
+
+            return itemContainer;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            renderCarousel();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            renderCarousel();
+        });
+
+        renderCarousel();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Modélisation Immobilière | Nolan Fontaine</title>
+    <meta name="description" content="Modélisation prédictive du prix de vente immobilier en R natif. Régression linéaire manuelle sur données réelles.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B0C15',
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-0">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500 group-hover:text-purple-500 transition-colors">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">À propos</a>
+                <a href="projet.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Mes projets</a>
+                <a href="competences.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Compétences</a>
+                <a href="notes.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes Notes</a>
+                <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+
+            <a href="contacter.html" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-bold rounded-lg transition-all flex items-center gap-2">
+                <span>Me contacter</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-5xl mx-auto px-6">
+        
+        <a href="projet.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors mb-8">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">#R</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">#Statistiques</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">#Algèbre</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-700 text-slate-300 border border-white/10">Avril 2025</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Modélisation Prédictive <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Valeur Foncière</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl">
+                Construction d'un algorithme de régression linéaire "from scratch" en R natif sur les ventes immobilières des Deux-Sèvres.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass p-8 rounded-3xl hover-card">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                    <i class="fas fa-project-diagram text-blue-500"></i> Contexte du projet
+                </h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    Ce projet s’inscrit dans le cadre d’une étude prédictive à partir d’un jeu de données réel sur les ventes de maisons et d’appartements (2023-2024). L’objectif académique majeur : interdiction d'utiliser des bibliothèques externes ou les fonctions natives (`lm` ou `predict`).
+                </p>
+            </div>
+            
+            <div class="glass p-8 rounded-3xl hover-card">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                    <i class="fas fa-bullseye text-purple-500"></i> Objectifs & Contraintes
+                </h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    L'enjeu était de concevoir mathématiquement le modèle à partir du jeu d’entraînement (variables explicatives + prix de vente), puis de l’appliquer pour prédire les valeurs foncières sur le jeu de test, en recréant manuellement les calculs matriciels.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-6">Réalisation Technique</h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-8 rounded-3xl border border-blue-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-cogs text-blue-400 text-2xl"></i> Méthodologie "From Scratch"
+                </h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Analyse descriptive des variables (distribution, moyenne, biais).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Traitement et encodage manuel des variables catégorielles.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Calcul manuel des coefficients (Inversion et Produits Matriciels).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Application du modèle via une fonction prédictive maison.</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-8 rounded-3xl border border-purple-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-file-code text-purple-400 text-2xl"></i> Livrables & Résultats
+                </h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span>Code R complet de la lecture des données à la prédiction.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span>Document d’analyse détaillant le processus de modélisation.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span>Fichier `prediction.csv` généré avec les valeurs estimées.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span>Évaluation de la performance (Somme des carrés des résidus).</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden mb-12 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Résultat et Évaluation</h2>
+            
+            <div class="flex justify-center mb-10">
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/5 w-64 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">SAE - Régression Manuelle</span>
+                    <span class="text-4xl md:text-5xl font-extrabold text-blue-400">13<span class="text-2xl text-slate-600">/20</span></span>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <a href="projets/regression.zip" download class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/25 transition-all flex items-center justify-center gap-3 w-full md:w-auto">
+                    <i class="fas fa-file-archive text-xl"></i> Télécharger le code source (.zip)
+                </a>
+            </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-white mb-4">Compétences acquises :</h2>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300"><i class="fas fa-calculator text-pink-400 mr-2"></i>Calcul Matriciel</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300"><i class="fas fa-chart-bar text-purple-400 mr-2"></i>Régression Linéaire</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300"><i class="fab fa-r-project text-blue-400 mr-2"></i>R natif (Base R)</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300"><i class="fas fa-bug text-orange-400 mr-2"></i>Analyse des Résidus</span>
+        </div>
+
+    </main>
+
+    <footer class="mt-32 py-12 border-t border-white/5 bg-[#0B0C15]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
+                <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:nolan.fontaine@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

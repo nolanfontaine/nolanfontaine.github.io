@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mes Compétences | Nolan Fontaine</title>
+    <meta name="description" content="Compétences de Nolan Fontaine en Data Science : Spécialisation EMS (Modélisation Statistique), Machine Learning, R, SAS, Python, SQL.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B0C15',
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Style des badges d'outils */
+        .tool-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            transition: all 0.2s;
+        }
+        .tool-badge:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-0">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500 group-hover:text-purple-500 transition-colors">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">À propos</a>
+                <a href="projet.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes projets</a>
+                <a href="competences.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Compétences</a>
+                <a href="notes.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes Notes</a>
+                <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+
+            <a href="contacter.html" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-bold rounded-lg transition-all flex items-center gap-2">
+                <span>Me contacter</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-400 text-xs font-medium tracking-wide mb-4">
+                <i class="fas fa-chart-line"></i> Spécialisation EMS (2ème année)
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Mes Compétences</h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+                Spécialisé en <strong>Exploration et Modélisation Statistique</strong>, je transforme les données complexes en modèles prédictifs fiables.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-20">
+            <div class="glass p-8 rounded-3xl relative overflow-hidden group border border-purple-500/30">
+                <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i class="fas fa-project-diagram text-8xl text-purple-500"></i>
+                </div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-2 block">Cœur d'expertise</span>
+                <h2 class="text-2xl font-bold text-white mb-4">Modélisation Statistique</h2>
+                <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                    Recueil, traitement et analyse multivariée des données. Sélection et application des outils mathématiques pour répondre à une problématique complexe.
+                </p>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> <strong>Inférence :</strong> Tests d'hypothèses et estimation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> <strong>Méthodes Factorielles :</strong> ACP, AFC, AFCM</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> <strong>Enquêtes :</strong> Création de plans d'expérience et sondages</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> <strong>Machine Learning :</strong> K-means, CAH, Régression</li>
+                </ul>
+            </div>
+
+            <div class="glass p-8 rounded-3xl relative overflow-hidden group border border-blue-500/20">
+                <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i class="fas fa-database text-8xl text-blue-500"></i>
+                </div>
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-2 block">Support Technique</span>
+                <h2 class="text-2xl font-bold text-white mb-4">Programmation & DataViz</h2>
+                <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                    Un statisticien doit maîtriser ses outils. Je code des scripts d'automatisation, gère les bases de données et crée des restitutions visuelles claires.
+                </p>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> <strong>Bases de données :</strong> Modélisation et requêtes SQL</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> <strong>Langages de script :</strong> Python, R, SAS, VBA</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> <strong>Visualisation :</strong> Reporting, Dashboards, Cartographie</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> <strong>Déploiement :</strong> Intégration et validation web</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">Ma Boîte à Outils Complète</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            <div class="glass p-6 rounded-2xl hover-card">
+                <div class="flex items-center gap-3 mb-4 text-purple-400">
+                    <i class="fas fa-laptop-code text-2xl"></i>
+                    <h3 class="font-bold text-white">Langages & Stats</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tool-badge">Python</span>
+                    <span class="tool-badge">R</span>
+                    <span class="tool-badge">SAS</span>
+                    <span class="tool-badge">Scala</span>
+                    <span class="tool-badge">VBA</span>
+                </div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl hover-card">
+                <div class="flex items-center gap-3 mb-4 text-blue-400">
+                    <i class="fas fa-server text-2xl"></i>
+                    <h3 class="font-bold text-white">Bases de Données & ETL</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tool-badge">SQL</span>
+                    <span class="tool-badge">MySQL</span>
+                    <span class="tool-badge">Oracle</span>
+                    <span class="tool-badge">MS Access</span>
+                    <span class="tool-badge">Talend (ETL)</span>
+                    <span class="tool-badge">OLAP</span>
+                </div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl hover-card">
+                <div class="flex items-center gap-3 mb-4 text-green-400">
+                    <i class="fas fa-chart-pie text-2xl"></i>
+                    <h3 class="font-bold text-white">DataViz & Enquêtes</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tool-badge">PowerBI</span>
+                    <span class="tool-badge">Tableau Software</span>
+                    <span class="tool-badge">Excel</span>
+                    <span class="tool-badge">R Shiny</span>
+                    <span class="tool-badge">QGIS (Géo)</span>
+                    <span class="tool-badge">Sphinx</span>
+                    <span class="tool-badge">Business Objects (BO)</span>
+                    <span class="tool-badge">Piktochart</span>
+                </div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl hover-card">
+                <div class="flex items-center gap-3 mb-4 text-orange-400">
+                    <i class="fas fa-code-branch text-2xl"></i>
+                    <h3 class="font-bold text-white">Web & DevOps</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tool-badge">HTML / CSS</span>
+                    <span class="tool-badge">JavaScript</span>
+                    <span class="tool-badge">PHP</span>
+                    <span class="tool-badge">Git</span>
+                    <span class="tool-badge">Docker</span>
+                    <span class="tool-badge">Linux</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
+            <h2 class="text-2xl font-bold text-white mb-6">Compétences Transversales & Perspectives</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-white font-medium">
+                        <i class="fas fa-users-cog text-blue-500"></i> Gestion de Projet
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Habitué au travail en équipe via la méthodologie <strong>Agile (Scrum)</strong> et la gestion de versions avec <strong>Git</strong>.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-white font-medium">
+                        <i class="fas fa-shield-alt text-purple-500"></i> RGPD & Éthique
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Sensibilisation stricte à la conformité réglementaire (<strong>RGPD</strong>) pour l'analyse et le traitement des données personnelles.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-white font-medium">
+                        <i class="fas fa-comment-dots text-green-500"></i> Communication
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Anglais technique validé. Capacité à présenter des résultats statistiques complexes à un public non-initié.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-32 py-12 border-t border-white/5 bg-[#0B0C15]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
+                <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:nolan.fontaine@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

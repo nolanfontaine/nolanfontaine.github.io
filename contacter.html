@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Me Contacter | Nolan Fontaine</title>
+    <meta name="description" content="Contactez Nolan Fontaine, étudiant en BUT Science des Données pour un stage, un projet ou une collaboration.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B0C15',
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Style des inputs du formulaire */
+        .glass-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            border-color: #3B82F6;
+            background: rgba(59, 130, 246, 0.05);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-0">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500 group-hover:text-purple-500 transition-colors">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="propos.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">À propos</a>
+                <a href="projet.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes projets</a>
+                <a href="competences.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Compétences</a>
+                <a href="notes.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes Notes</a>
+                <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+
+            <a href="contacter.html" class="px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-lg transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                <span>Me contacter</span>
+                <i class="fas fa-paper-plane text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Discutons de vos données</h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+                Vous avez un projet de Data Science, une offre de stage (Printemps 2025) ou simplement une question ? N'hésitez pas à me contacter.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            
+            <div class="space-y-6">
+                
+                <a href="mailto:nolanfontainepro@email.com" class="glass p-6 rounded-2xl flex items-center gap-6 hover-card">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-500 text-xl">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-400 mb-1">Email</h3>
+                        <p class="text-white font-medium">nolanfontainepro@email.com</p>
+                    </div>
+                </a>
+
+                <a href="tel:+33769149156" class="glass p-6 rounded-2xl flex items-center gap-6 hover-card">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center text-green-500 text-xl">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-400 mb-1">Téléphone</h3>
+                        <p class="text-white font-medium">+33 7 69 14 91 56</p>
+                    </div>
+                </a>
+
+                <div class="glass p-6 rounded-2xl flex items-center gap-6 border-white/5">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 text-xl">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-400 mb-1">Localisation</h3>
+                        <p class="text-white font-medium">Angers / Niort, France</p>
+                    </div>
+                </div>
+
+                <div class="pt-6 grid grid-cols-2 gap-6">
+                    <a href="projets/CV.pdf" target="_blank" class="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover-card text-center">
+                        <i class="fas fa-file-pdf text-3xl text-purple-400"></i>
+                        <span class="font-bold text-white">Mon CV</span>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover-card text-center">
+                        <i class="fab fa-linkedin text-3xl text-blue-500"></i>
+                        <span class="font-bold text-white">LinkedIn</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="glass p-8 rounded-3xl border border-white/5 relative">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
+                
+                <h3 class="text-2xl font-bold text-white mb-6">Envoyez-moi un message</h3>
+                
+                <form action="mailto:nolanfontainepro@email.com" method="post" enctype="text/plain" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-slate-400 ml-1">Prénom</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-xl glass-input" placeholder="John" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-slate-400 ml-1">Nom</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-xl glass-input" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-slate-400 ml-1">Email professionnel</label>
+                        <input type="email" class="w-full px-4 py-3 rounded-xl glass-input" placeholder="john.doe@entreprise.com" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-slate-400 ml-1">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 rounded-xl glass-input resize-none" placeholder="Bonjour Nolan, je vous contacte pour..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/25 transition-all mt-4 flex items-center justify-center gap-2">
+                        <span>Envoyer le message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="mt-32 py-12 border-t border-white/5 bg-[#0B0C15]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
+                <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:nolanfontainepro@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

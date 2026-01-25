@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio Nolan Fontaine | Science des Données</title>
+    <meta name="description" content="Portfolio de Nolan Fontaine, étudiant en BUT Science des Données à l'IUT de Niort.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B0C15',
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        
+        /* Effet de verre (Glassmorphism) */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Animation subtile au survol des cartes */
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Cadre photo néon */
+        .photo-frame {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+            border: 2px solid rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500 group-hover:text-purple-500 transition-colors">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Accueil</a>
+                <a href="propos.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">À propos</a>
+                <a href="projet.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes projets</a>
+                <a href="competences.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Compétences</a>
+                <a href="notes.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes Notes</a>
+                <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+
+            <a href="contacter.html" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-bold rounded-lg transition-all flex items-center gap-2">
+                <span>Me contacter</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pt-40 pb-16 px-6 relative">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                
+                <div class="flex-1 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-medium tracking-wide">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Recherche de stage : Printemps 2025
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-white">
+                        Bienvenue sur <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                          Mon Portfolio
+                        </span>
+                    </h1>
+
+                    <p class="text-lg text-slate-400 max-w-md mx-auto md:mx-0 leading-relaxed text-justify">
+                        Bonjour, je suis <strong>Nolan Fontaine</strong>, étudiant à l'IUT de Niort. J'utilise les mathématiques et la programmation pour transformer la donnée brute en stratégies concrètes.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                        <a href="projet.html" class="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg shadow-lg shadow-blue-600/25 transition-all w-full sm:w-auto text-center">
+                            Explorer mes projets
+                        </a>
+                        <a href="projets/CV.pdf" target="_blank" class="px-8 py-3.5 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-lg transition-all w-full sm:w-auto text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i> Télécharger mon CV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 relative w-full max-w-sm flex justify-center mt-10 md:mt-0">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden photo-frame relative">
+                        <img src="img/photo.jpg" alt="Nolan Fontaine" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute top-10 -right-8 md:-right-20 glass px-4 py-2 rounded-lg font-bold text-sm text-blue-400 border border-blue-500/30 shadow-lg">
+                        <i class="fas fa-laptop-code text-blue-400 mr-1"></i> Programmation
+                    </div>
+                    <div class="absolute bottom-10 -left-8 md:-left-20 glass px-4 py-2 rounded-lg font-bold text-sm text-purple-400 border border-purple-500/30 shadow-lg">
+                        <i class="fas fa-chart-pie mr-1"></i> Statistiques
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20 border-t border-white/5 bg-[#0B0C15]/50">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-2">Mes Compétences</h2>
+                        <p class="text-slate-400">Une double expertise à la croisée des mathématiques et de l'informatique.</p>
+                    </div>
+                    <a href="competences.html" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
+                        Voir tout <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-2xl hover-card">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-pie text-2xl text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Statistiques & Analyse</h3>
+                        <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                            Interprétation des données, calculs probabilistes et modélisation pour extraire des informations clés.
+                        </p>
+                    </div>
+
+                    <div class="glass p-8 rounded-2xl hover-card">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-laptop-code text-2xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Informatique & Base de données</h3>
+                        <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                            Collecte, stockage et automatisation des traitements de données via des outils de développement.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-2">Projets Récents</h2>
+                        <p class="text-slate-400">Quelques cas concrets de traitement de données.</p>
+                    </div>
+                    <a href="projet.html" class="hidden md:flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
+                        Voir tout <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="projet7.html" class="group block glass rounded-2xl overflow-hidden hover-card h-full">
+                        <div class="h-40 bg-[url('img/projet7.PNG')] bg-cover bg-center border-b border-white/5 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-blue-400 mb-2 block">Statistiques avec R</span>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Modélisation Foncière</h3>
+                            <p class="text-sm text-slate-400">Régression linéaire sur les ventes immobilières des Deux-Sèvres. Construction manuelle de l'algorithme.</p>
+                        </div>
+                    </a>
+
+                    <a href="projet6.html" class="group block glass rounded-2xl overflow-hidden hover-card h-full">
+                        <div class="h-40 bg-[url('img/projet6.PNG')] bg-cover bg-center border-b border-white/5 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-purple-400 mb-2 block">SQL & Python</span>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Gestion Base de Données</h3>
+                            <p class="text-sm text-slate-400">Création d'une BDD relationnelle (MySQL) pour une coopérative, interfacée avec Python/Tkinter.</p>
+                        </div>
+                    </a>
+
+                    <a href="projet4.html" class="group block glass rounded-2xl overflow-hidden hover-card h-full">
+                        <div class="h-40 bg-[url('img/projet5.PNG')] bg-cover bg-center border-b border-white/5 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-green-400 mb-2 block">Excel & VBA</span>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">Reporting Automatisé</h3>
+                            <p class="text-sm text-slate-400">Création d'un tableau de bord dynamique et macro VBA pour la gestion des notes académiques.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mt-8 text-center md:hidden">
+                    <a href="projet.html" class="inline-flex items-center gap-2 text-blue-400 font-medium">
+                        Voir tous mes projets <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 border-t border-white/5 bg-[#0B0C15]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
+                <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:nolan.fontaine@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
