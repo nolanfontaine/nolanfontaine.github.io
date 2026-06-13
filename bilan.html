@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Bilan 1ère Année | Nolan Fontaine</title>
-    <meta name="description" content="Rétrospective de ma première année en BUT Science des Données. Apprentissages, défis relevés et choix du parcours EMS pour la suite.">
+    <title>Mes Bilans | Nolan Fontaine</title>
+    <meta name="description" content="Rétrospective de ma formation en BUT Science des Données.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -42,15 +42,10 @@
             transition: all 0.3s ease;
         }
         .hover-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(59, 130, 246, 0.3);
             box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
         }
-
-        .text-glow-blue { text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
-        .text-glow-purple { text-shadow: 0 0 15px rgba(168, 85, 247, 0.5); }
-        .text-glow-green { text-shadow: 0 0 15px rgba(16, 185, 129, 0.5); }
     </style>
 </head>
 <body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-0">
@@ -81,111 +76,39 @@
         </div>
     </nav>
 
-    <main class="pt-32 max-w-4xl mx-auto px-6">
-        
+    <main class="pt-40 max-w-6xl mx-auto px-6 min-h-screen">
         <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-medium tracking-wide mb-4">
-                <i class="fas fa-flag-checkered"></i> Compte rendu de 1ère année (BUT 1)
-            </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Bilan de Première Année</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Mon Bilan de Formation</h1>
             <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-                Rétrospective de ma première année en Science des Données : la consolidation des bases, les défis relevés et mon orientation pour la suite.
+                Découvrez mon évolution au fil des années, de l'acquisition des fondamentaux à l'application concrète en milieu professionnel.
             </p>
         </div>
 
-        <div class="space-y-12">
-            
-            <div class="glass p-8 md:p-10 rounded-3xl relative overflow-hidden hover-card">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 text-2xl border border-blue-500/20">
-                        <i class="fas fa-compass"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white text-glow-blue">Une année charnière</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <a href="bilan-but1.html" class="glass p-10 rounded-3xl group hover-card border border-blue-500/20 hover:border-blue-500/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
+                <div class="text-blue-500 text-4xl mb-6"><i class="fas fa-seedling"></i></div>
+                <h2 class="text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">Première Année</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    Consolidation des bases en Python, SQL et statistiques descriptives. Découverte de l'univers de la Data Science.
+                </p>
+                <div class="flex items-center gap-2 text-blue-400 font-bold uppercase text-xs tracking-widest">
+                    Voir le bilan <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </div>
-                <div class="space-y-4 text-slate-300 leading-relaxed text-justify">
-                    <p>
-                        Ma première année en Bachelor Universitaire de Technologie (BUT) en Science des Données a constitué une étape majeure dans mon parcours. Venant initialement d'un BUT Informatique, j'ai eu confirmation dès le premier semestre que ma véritable passion résidait dans l'analyse, la logique mathématique et la modélisation.
-                    </p>
-                    <p>
-                        Cette année a été riche d’enseignements. J’ai pu appréhender la diversité des domaines qui composent la Data Science, de la programmation brute à l’analyse statistique poussée, validant ainsi définitivement mon choix de réorientation.
-                    </p>
-                </div>
-            </div>
+            </a>
 
-            <div class="glass p-8 md:p-10 rounded-3xl relative overflow-hidden hover-card">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500 text-2xl border border-purple-500/20">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white text-glow-purple">L'apprentissage des Fondamentaux</h2>
+            <a href="bilan-but2.html" class="glass p-10 rounded-3xl group hover-card border border-purple-500/20 hover:border-purple-500/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-3xl rounded-full"></div>
+                <div class="text-purple-500 text-4xl mb-6"><i class="fas fa-rocket"></i></div>
+                <h2 class="text-3xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">Deuxième Année</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    Spécialisation EMS, Machine Learning et immersion chez Covéa pour l'industrialisation du reporting des risques.
+                </p>
+                <div class="flex items-center gap-2 text-purple-400 font-bold uppercase text-xs tracking-widest">
+                    Voir le bilan <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </div>
-                <div class="space-y-4 text-slate-300 leading-relaxed text-justify">
-                    <p>
-                        Le programme de cette première année a été exigeant et dense. En programmation, j’ai principalement travaillé avec <strong>Python</strong>, le langage essentiel pour manipuler et analyser les données. Apprendre à coder efficacement et implémenter des algorithmes m’a demandé de la rigueur, mais cela constitue désormais le socle de mes compétences.
-                    </p>
-                    <p>
-                        La gestion des bases de données a également été centrale. J’ai appris à concevoir des modèles conceptuels (MCD) et logiques (MLD), m'aidant à structurer l’information efficacement. Comprendre la mécanique des bases relationnelles avec <strong>SQL</strong> est devenu une seconde nature.
-                    </p>
-                    <p>
-                        Enfin, la <strong>Visualisation des données</strong> m'a fait découvrir comment représenter graphiquement des informations complexes pour les rendre compréhensibles à différents publics. Une compétence indispensable pour communiquer les résultats d’une analyse.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass p-8 md:p-10 rounded-3xl relative overflow-hidden border border-purple-500/30 bg-gradient-to-br from-[#161822]/80 to-purple-900/10">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 text-2xl border border-purple-500/30">
-                        <i class="fas fa-chart-area"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white">L'évidence du parcours EMS pour la suite</h2>
-                </div>
-                <div class="space-y-4 text-slate-300 leading-relaxed text-justify">
-                    <p>
-                        L’analyse statistique a été une révélation cette année. Elle m’a permis d’appréhender les données sous un angle quantitatif, en apprenant à décrire, interpréter et modéliser des phénomènes à partir de données brutes. 
-                    </p>
-                    <p>
-                        La rigueur mathématique nécessaire pour appliquer ces concepts a représenté un défi passionnant. Au fil des mois, j’ai découvert que je prenais un réel plaisir à chercher des tendances cachées dans les chiffres.
-                    </p>
-                    <p class="text-purple-300 font-medium">
-                        C'est cette préférence qui m’oriente naturellement vers le parcours <strong>Exploration et Modélisation Statistiques (EMS)</strong> pour ma deuxième année. Je suis convaincu que cette spécialisation me permettra d’acquérir les compétences pointues et recherchées pour le Machine Learning.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass p-8 rounded-3xl hover-card">
-                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <i class="fas fa-mountain text-orange-400"></i> Les Défis Relevés
-                    </h3>
-                    <p class="text-sm text-slate-300 leading-relaxed text-justify">
-                        L’un des principaux obstacles de cette première année a été la gestion du volume de travail. Équilibrer les cours théoriques, les TPs et les nombreux projets a demandé une discipline stricte. J'ai dû développer des stratégies d’organisation personnelle pour rester efficace sous pression.
-                    </p>
-                </div>
-                <div class="glass p-8 rounded-3xl hover-card">
-                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <i class="fas fa-users text-green-400"></i> Le Travail d'Équipe
-                    </h3>
-                    <p class="text-sm text-slate-300 leading-relaxed text-justify">
-                        Les projets de groupe (SAÉ) ont été particulièrement formateurs. Apprendre à répartir les tâches intelligemment, à collaborer sur du code via Git, et à résoudre les imprévus techniques en équipe m’a permis de développer des qualités relationnelles indispensables.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass p-8 md:p-10 rounded-3xl relative overflow-hidden border-t-4 border-blue-500">
-                <h2 class="text-2xl font-bold text-white mb-6">Conclusion</h2>
-                <div class="space-y-4 text-slate-300 leading-relaxed text-justify">
-                    <p>
-                        En résumé, cette première année de BUT a été une période d’apprentissage intense, pleine de défis mais aussi de grandes satisfactions. Elle m’a permis de poser des bases solides en Science des Données tout en développant mon autonomie et mon esprit critique.
-                    </p>
-                    <p>
-                        Ce bilan très positif me motive à poursuivre mes études avec détermination. Cette première année m’a donné l'élan nécessaire pour relever les nouveaux défis de la deuxième année et contribuer activement à des projets innovants autour de l'Intelligence Artificielle.
-                    </p>
-                </div>
-            </div>
-
+            </a>
         </div>
-
     </main>
 
     <footer class="mt-32 py-12 border-t border-white/5 bg-[#0B0C15]">
@@ -199,7 +122,7 @@
                 <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="mailto:nolan.fontaine@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
+                <a href="mailto:nolanfontainepro@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
