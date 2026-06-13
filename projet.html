@@ -3,63 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Mes Projets | Nolan Fontaine</title>
-    <meta name="description" content="Découvrez les projets de Data Science de Nolan Fontaine : BDD, Reporting, Régression, Analyse statistique...">
-
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0B0C15',
-                        primary: '#3B82F6',
-                        secondary: '#6366F1',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .hover-card {
-            transition: all 0.3s ease;
-        }
-        .hover-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(59, 130, 246, 0.3);
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
-        }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); }
     </style>
 </head>
 <body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-10">
 
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
-    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
     <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
                 <span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500 group-hover:text-purple-500 transition-colors">.</span></span>
             </a>
-            
             <div class="hidden md:flex items-center gap-8">
                 <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
                 <a href="propos.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">À propos</a>
@@ -69,180 +32,146 @@
                 <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
                 <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
             </div>
-
-            <a href="contacter.html" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-bold rounded-lg transition-all flex items-center gap-2">
-                <span>Me contacter</span>
-                <i class="fas fa-arrow-right text-xs"></i>
-            </a>
         </div>
     </nav>
 
     <main class="pt-32 max-w-7xl mx-auto px-6">
-        
         <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-medium tracking-wide mb-4">
-                <i class="fas fa-code"></i> Portfolio Data Science
-            </div>
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Mes Projets</h1>
             <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-                De la conception de bases de données à la modélisation prédictive, découvrez les projets concrets que j'ai réalisés durant ma formation.
+                De la conception de bases de données à la modélisation prédictive, classés du plus récent au plus ancien.
             </p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <a href="projet1.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full border border-white/5">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="img/projet1.PNG" alt="Projet Ville Olympique" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">
-                        Octobre 2024
-                    </div>
+            <a href="projet-analyse.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Juin 2025</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-3">
-                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Économie</span>
-                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Analyse</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Python</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-yellow-500/20 text-yellow-500">#PowerBI</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        Présentation d'un territoire économique et culturel
-                    </h3>
-                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
-                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Analyse & DataViz (Calyxis)</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <a href="projet3.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full border border-white/5">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="img/projet4.PNG" alt="Projet NFP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">
-                        Décembre 2024
-                    </div>
+            <a href="projet8.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Juin 2025</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-3">
-                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#R</span>
                         <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Statistiques</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        Apprendre en situation la production de données
-                    </h3>
-                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
-                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Échantillonnage et Estimation</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <a href="projet4.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full border border-white/5">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="img/projet5.PNG" alt="Projet Reporting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">
-                        Janvier 2025
-                    </div>
+            <a href="projet-indicateurs.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Mai 2025</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-3">
                         <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
-                        <span class="text-xs font-bold px-2 py-1 rounded bg-yellow-500/20 text-yellow-500">#VBA</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Finance</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        Création d'un reporting automatisé
-                    </h3>
-                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
-                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Indicateurs de Performances</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <a href="projet6.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full border border-white/5">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="img/projet6.PNG" alt="Projet BDD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">
-                        Avril 2025
-                    </div>
+            <a href="projet6.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Avril 2025</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-3">
                         <span class="text-xs font-bold px-2 py-1 rounded bg-pink-500/20 text-pink-400">#SQL</span>
                         <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Python</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        Conception d'une base de données relationnelle
-                    </h3>
-                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
-                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Base de Données Sel Marin</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <a href="projet7.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full border border-white/5">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="img/projet7.PNG" alt="Projet Régression" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">
-                        Avril 2025
-                    </div>
+            <a href="projet7.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Avril 2025</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-3">
                         <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#R</span>
                         <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Statistiques</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        Régression sur des données réelles
-                    </h3>
-                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
-                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Régression Valeur Foncière</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <a href="projet8.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full border border-white/5">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="img/projet8.png" alt="Projet Échantillonnage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">
-                        Juin 2025
-                    </div>
+            <a href="projet4.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Janvier 2025</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-3">
-                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#R</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-yellow-500/20 text-yellow-500">#VBA</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Reporting Automatisé</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet3.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Décembre 2024</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
                         <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Statistiques</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        Échantillonnage et Estimation
-                    </h3>
-                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Analyse Électorale NFP</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet-gestion.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Octobre 2024</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Python</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-orange-500/20 text-orange-400">#Algorithmique</span>
                     </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Gestion de Fichiers en Python</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet1.html" class="group glass rounded-2xl overflow-hidden hover-card flex flex-col h-full">
+                <div class="relative h-48 bg-slate-800">
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white">Octobre 2024</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Économie</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Analyse</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Ville Olympique Saint-Louis</h3>
+                    <div class="mt-auto pt-4 text-sm font-bold text-slate-300 group-hover:text-blue-400">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
         </div>
     </main>
-
-    <footer class="mt-32 py-12 border-t border-white/5 bg-[#0B0C15]">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
-                <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
-            </div>
-            
-            <div class="flex gap-4">
-                <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:nolan.fontaine@email.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
 </body>
 </html>
