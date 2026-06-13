@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modélisation Prédictive ML | Nolan Fontaine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-10">
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500">.</span></span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="projet.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Mes projets</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-5xl mx-auto px-6">
+        <a href="projet.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors mb-8">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-500 border border-yellow-500/30">#Python</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">#Scikit-Learn</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">#MachineLearning</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-700 text-slate-300 border border-white/10">Mars 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Modélisation Prédictive <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-500">Qualité du Vin</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl">
+                Développement d'un modèle de Machine Learning sous Python visant à prédire le degré d'alcool à partir de variables physicochimiques.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass p-8 rounded-3xl">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-project-diagram text-green-500"></i> Contexte du projet</h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    L’objectif de cette SAÉ était d’implémenter une démarche complète d’apprentissage supervisé (Machine Learning). À partir d'un jeu de données contenant 6500 échantillons de vin et 10 indicateurs physicochimiques (pH, acidité, densité, sulfites...), la mission consistait à construire le meilleur modèle capable d'anticiper le degré d'alcool, en gérant toutes les complexités de la donnée réelle (valeurs manquantes, atypiques, et disparités d'échelle).
+                </p>
+            </div>
+            
+            <div class="glass p-8 rounded-3xl">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-bullseye text-blue-500"></i> Objectifs & Valeur ajoutée</h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    Plutôt que d'appliquer aveuglément un algorithme, l'enjeu était de démontrer la rigueur statistique de la démarche. J'ai évalué plusieurs stratégies de traitement de la donnée (imputation par itération, suppression vs winsorisation des *outliers*) pour maximiser le pouvoir prédictif du modèle. Le succès du projet repose sur la validation croisée (K-Fold), garantissant que le modèle final n'est pas victime de "sur-apprentissage" et qu'il généralisera parfaitement en production.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-6">Réalisation Technique</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-8 rounded-3xl border border-yellow-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-cogs text-yellow-500 text-2xl"></i> Méthodes mises en œuvre</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-yellow-500 mt-1"></i> <span><strong>Nettoyage (Data Cleaning) :</strong> Gestion des NaN via <code>SimpleImputer</code> (Médiane) et <code>IterativeImputer</code> (régressions successives).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-yellow-500 mt-1"></i> <span><strong>Traitement des Outliers :</strong> Détection par Z-score, Boxplot (IQR) et winsorisation (écrêtement) des valeurs extrêmes.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-yellow-500 mt-1"></i> <span><strong>Standardisation :</strong> Centrage et réduction (<code>StandardScaler</code>) pour éviter les biais algorithmiques.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-yellow-500 mt-1"></i> <span><strong>Modélisation :</strong> Création d'une instance de Régression Multiple sous <code>Scikit-Learn</code>, séparation Train/Test (80/20) et Cross-Validation K-Fold.</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-8 rounded-3xl border border-green-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-chart-line text-green-400 text-2xl"></i> Production Finale</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span>Un script Python analytique complet intégrant Pandas, Numpy et Scikit-Learn.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span>Plusieurs modèles testés avec comparaison de métriques de performance (RMSE, R²).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span>Validation robuste du modèle via la méthode "Repeated K-Fold" sur 100 000 itérations simulées.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span>Un rapport justifiant les choix de *Data Engineering* et prouvant l'absence de sous/sur-ajustement.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden mb-12 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Résultat et Évaluation</h2>
+            <div class="flex justify-center mb-10">
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-green-500/30 w-64 shadow-[0_0_20px_rgba(74,222,128,0.1)]">
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">SAE - Machine Learning</span>
+                    <span class="text-4xl md:text-5xl font-extrabold text-green-400">14<span class="text-2xl text-slate-600">/20</span></span>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <a href="projets/projet.pdf" download class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-3">
+                    <i class="fas fa-file-pdf text-xl"></i> Télécharger le rapport technique (PDF)
+                </a>
+            </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-white mb-4">Compétences acquises :</h2>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Scikit-Learn</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Nettoyage de Données (Outliers/NaN)</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Validation Croisée (K-Fold)</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Évaluation (R², RMSE)</span>
+        </div>
+    </main>
+</body>
+</html>
