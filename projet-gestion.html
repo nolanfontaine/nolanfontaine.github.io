@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Fichiers | Nolan Fontaine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-10">
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500">.</span></span></a>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-5xl mx-auto px-6">
+        <a href="projet.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors mb-8">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400">#Python</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-orange-500/20 text-orange-400">#Algorithmique</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-700 text-slate-300">Octobre 2024</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">Gestion de Fichiers en <span class="text-blue-400">Python</span></h1>
+            <p class="text-lg text-slate-400 max-w-2xl">Développement d'un programme de lecture, tri et écriture de données textuelles complexes.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl mb-8">
+            <h2 class="text-xl font-bold text-white mb-4"><i class="fas fa-project-diagram text-blue-500 mr-2"></i>Contexte</h2>
+            <p class="text-sm text-slate-300 leading-relaxed text-justify mb-4">
+                L’objectif principal de cette SAÉ était de comprendre et maîtriser la gestion des fichiers en Python, en développant un programme capable de lire des données depuis un fichier texte, de les trier correctement par le biais d'algorithmes, puis d’écrire le résultat dans un fichier de sortie.
+            </p>
+            <h2 class="text-xl font-bold text-white mb-4 mt-8"><i class="fas fa-microchip text-blue-500 mr-2"></i>Défis Techniques</h2>
+            <p class="text-sm text-slate-300 leading-relaxed text-justify mb-4">
+                Le défi majeur a été l'optimisation des performances du code pour garantir une exécution rapide sur de gros volumes de données. L'application des algorithmes de tri sur les chaînes de caractères extraites a demandé une conception logique minutieuse.
+            </p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-white/5 text-center">
+            <h2 class="text-2xl font-bold text-white mb-6">Évaluation : 16/20</h2>
+            <a href="projets/projet.pdf" download class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg transition-all inline-flex items-center gap-3">
+                <i class="fas fa-download text-xl"></i> Télécharger le projet (PDF)
+            </a>
+        </div>
+    </main>
+</body>
+</html>
