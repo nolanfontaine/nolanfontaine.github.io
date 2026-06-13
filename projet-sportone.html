@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Warehouse SportOne | Nolan Fontaine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-orange-500 selection:text-white pb-10">
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500">.</span></span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="projet.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Mes projets</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-5xl mx-auto px-6">
+        <a href="projet.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors mb-8">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 border border-orange-500/30">#Talend</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">#PowerBI</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">#OracleSQL</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-700 text-slate-300 border border-white/10">Janvier 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Entrepôt de Données <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Projet SportOne</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl">
+                Création complète d'un pipeline ETL, d'un Data Warehouse en étoile et de tableaux de bord BI pour analyser les ventes d'une franchise internationale.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass p-8 rounded-3xl">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-project-diagram text-orange-500"></i> Contexte du projet</h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    L'entreprise fictive SportOne, acteur mondial de la vente d'articles de sport, souhaitait se doter d'une infrastructure décisionnelle robuste. Les données de production (2017-2022) couvraient les ventes, les clients, les employés et le catalogue produit, mais étaient éparpillées sous divers formats (MDB Access, CSV, Excel), incohérentes, ou mal organisées.
+                </p>
+            </div>
+            
+            <div class="glass p-8 rounded-3xl">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-bullseye text-blue-500"></i> Objectifs & Valeur ajoutée</h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    L’objectif était de concevoir un <strong>Data Warehouse</strong> fiable basé sur un "schéma en étoile". La véritable valeur ajoutée a été la phase d'ingénierie des données : traiter les violations d'intégrité, générer programmatiquement une dimension "Temps" manquante, et alimenter la base de données Oracle, afin de pouvoir créer des reportings Power BI offrant des <i>insights</i> immédiatement actionnables pour la direction.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-6">Réalisation Technique</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-8 rounded-3xl border border-orange-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-database text-orange-500 text-2xl"></i> Méthodes mises en œuvre</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-orange-500 mt-1"></i> <span><strong>Architecture BDD :</strong> Création d'un schéma en étoile sous Oracle SQL Developer (Tables de Fait et de Dimensions).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-orange-500 mt-1"></i> <span><strong>Scripting Python :</strong> Développement d'un script pour générer et enrichir la dimension temporelle manquante (Date_Dim).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-orange-500 mt-1"></i> <span><strong>Processus ETL :</strong> Utilisation de Talend Open Studio pour extraire (fichiers hétérogènes), transformer (nettoyer les incohérences) et charger (Load) la base Oracle.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-orange-500 mt-1"></i> <span><strong>Business Intelligence :</strong> Connexion de Power BI au Data Warehouse pour la restitution.</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-8 rounded-3xl border border-blue-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-chart-pie text-blue-400 text-2xl"></i> Production Finale</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Une base de données Oracle structurée, optimisée pour les requêtes analytiques massives.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Des flux Talend (Jobs) automatisant le nettoyage et l'injection des données d'entreprise.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Un portfolio de <strong>15 tableaux de bord Power BI</strong> interactifs croisant les axes de géographie, de temporalité, et de performance des employés.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Un rapport de synthèse mettant en avant des recommandations stratégiques (Insights).</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden mb-12 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Résultat et Évaluation</h2>
+            <div class="flex justify-center mb-10">
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-green-500/30 w-64 shadow-[0_0_20px_rgba(74,222,128,0.15)]">
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">SAE - Data Warehouse</span>
+                    <span class="text-4xl md:text-5xl font-extrabold text-green-400">20<span class="text-2xl text-slate-600">/20</span></span>
+                    <span class="block mt-2 text-[10px] font-bold text-green-400 bg-green-500/20 px-2 py-1 rounded inline-block">EXCELLENT</span>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <a href="projets/projet.pdf" download class="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-3">
+                    <i class="fas fa-file-pdf text-xl"></i> Télécharger le rapport (PDF)
+                </a>
+            </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-white mb-4">Compétences acquises :</h2>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">ETL (Talend)</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Modélisation en Étoile</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Oracle SQL Developer</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Power BI (DataViz)</span>
+        </div>
+    </main>
+</body>
+</html>
