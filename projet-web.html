@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Web PHP | Nolan Fontaine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-purple-500 selection:text-white pb-10">
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500">.</span></span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="projet.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Mes projets</a>
+                <a href="bilan.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Bilan</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-5xl mx-auto px-6">
+        <a href="projet.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors mb-8">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">#PHP</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">#MySQL</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-500 border border-yellow-500/30">#JavaScript</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-700 text-slate-300 border border-white/10">Novembre 2025</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Application Web <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Pêches Électriques</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl">
+                Création complète d'un portail web dynamique connecté à une base de données MySQL pour exploiter des jeux de données OpenData.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass p-8 rounded-3xl">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-project-diagram text-purple-500"></i> Contexte du projet</h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    Dans le cadre du module "Technologies Web", j'ai dû concevoir de A à Z une application permettant de visualiser et de gérer un jeu de données massives issu de l'OpenData français (data.gouv.fr). Le choix s'est porté sur les résultats des pêches électriques en Basse-Normandie, avec la mission de rendre cette information accessible via un navigateur web.
+                </p>
+            </div>
+            
+            <div class="glass p-8 rounded-3xl">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-bullseye text-blue-500"></i> Objectifs & Valeur ajoutée</h2>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    L'objectif n'était pas seulement d'afficher des données, mais de bâtir une véritable architecture Full-Stack : un Backend robuste (PHP/MySQL) gérant le CRUD (Création, Lecture, Modification, Suppression) sécurisé, et un Frontend dynamique intégrant des indicateurs statistiques complexes via JavaScript et jQuery (diagrammes circulaires, cartes, densité d'espèces).
+                </p>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-6">Réalisation Technique</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-8 rounded-3xl border border-purple-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-code text-purple-500 text-2xl"></i> Méthodes mises en œuvre</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span><strong>Conception UML :</strong> Réalisation du diagramme des cas d'utilisation pour cibler les fonctionnalités clés.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span><strong>Base de données :</strong> Import scripté et conception du modèle relationnel sous MySQL.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span><strong>Développement Backend :</strong> Logique serveur en PHP (requêtes SQL dynamiques, variables de session, sécurité de connexion).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-purple-500 mt-1"></i> <span><strong>Développement Frontend :</strong> Interface HTML/CSS responsive et intégration asynchrone jQuery/JS.</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-8 rounded-3xl border border-blue-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-desktop text-blue-400 text-2xl"></i> Production Finale</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Un portail Web avec authentification gérant l'accès sécurisé aux données.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Une page d'administration permettant l'import de nouveaux datasets et la gestion des tables métiers (CRUD).</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Un "Tableau de Bord" interactif : carte géographique des stations, et graphiques temporels/massiques par espèce.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-blue-500 mt-1"></i> <span>Un compte-rendu d'architecture technique détaillant la conception de la base de données et de l'interface.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden mb-12 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Résultat et Évaluation</h2>
+            <div class="flex justify-center mb-10">
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-green-500/30 w-64 shadow-[0_0_20px_rgba(74,222,128,0.1)]">
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">SAE - Technologies Web</span>
+                    <span class="text-4xl md:text-5xl font-extrabold text-green-400">18<span class="text-2xl text-slate-600">/20</span></span>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <a href="projets/projet.pdf" download class="px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-3">
+                    <i class="fas fa-file-pdf text-xl"></i> Télécharger le bilan technique (PDF)
+                </a>
+            </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-white mb-4">Compétences acquises :</h2>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Architecture Full-Stack</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">PHP & Requêtes SQL</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">JavaScript / jQuery (DataViz)</span>
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-300">Exploitation d'OpenData</span>
+        </div>
+    </main>
+</body>
+</html>
