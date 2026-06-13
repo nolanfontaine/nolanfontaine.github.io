@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de données et DataViz | Nolan Fontaine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-10">
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500">.</span></span></a>
+        </div>
+    </nav>
+
+    <main class="pt-32 max-w-5xl mx-auto px-6">
+        <a href="projet.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors mb-8">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400">#Python</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-500">#PowerBI</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-700 text-slate-300">Juin 2025</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">Analyse de données et <span class="text-blue-400">DataViz</span></h1>
+            <p class="text-lg text-slate-400 max-w-2xl">SAÉ réalisée pour Calyxis : Analyse des Accidents de la Vie Courante (AcVC) en France via Python et Power BI.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl mb-8">
+            <h2 class="text-xl font-bold text-white mb-4"><i class="fas fa-project-diagram text-blue-500 mr-2"></i>Contexte</h2>
+            <p class="text-sm text-slate-300 leading-relaxed text-justify mb-4">
+                L’objectif était de concevoir un outil interactif permettant d’analyser les Accidents de la Vie Courante en France, d’en mesurer l’ampleur et d’identifier les facteurs influençant leur survenue et leur gravité. Ce projet s’inscrivait dans une logique d’aide à la décision. Nous avons exploité les données issues de l’observatoire MAVIE.
+            </p>
+            <h2 class="text-xl font-bold text-white mb-4 mt-8"><i class="fas fa-laptop-code text-blue-500 mr-2"></i>Développement technique</h2>
+            <ul class="space-y-3 text-sm text-slate-300 list-disc pl-5">
+                <li>Nettoyage et préparation des données avec Python (bibliothèque Pandas).</li>
+                <li>Création d'une interface interactive avec Streamlit (tests du Khi², exploration des données).</li>
+                <li>Développement d'un tableau de bord dynamique avec Power BI pour visualiser les profils à risque.</li>
+            </ul>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-white/5 text-center">
+            <h2 class="text-2xl font-bold text-white mb-6">Évaluation : 16/20</h2>
+            <a href="projets/projet.pdf" download class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg transition-all inline-flex items-center gap-3">
+                <i class="fas fa-download text-xl"></i> Télécharger le projet (PDF)
+            </a>
+        </div>
+    </main>
+</body>
+</html>
