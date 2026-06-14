@@ -16,20 +16,25 @@
         body { font-family: 'Inter', sans-serif; background-color: #0B0C15; color: white; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .hover-card { transition: all 0.3s ease; }
-        .hover-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); }
+        .hover-card-blue:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); }
+        .hover-card-purple:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); border-color: rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2); }
+        
+        /* Animation de fondu pour le changement de grille */
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white pb-0">
+<body class="overflow-x-hidden selection:bg-purple-500 selection:text-white pb-10">
 
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div id="bg-glow" class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] -z-10 pointer-events-none transition-colors duration-700"></div>
 
     <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#0B0C15]/70 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span class="text-blue-500">.</span></span></a>
+            <a href="index.html" class="flex items-center gap-2 group"><span class="text-2xl font-extrabold text-white tracking-tight">Nolan<span id="logo-dot" class="text-purple-500 transition-colors duration-500">.</span></span></a>
             <div class="hidden md:flex items-center gap-8">
                 <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Accueil</a>
                 <a href="propos.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">À propos</a>
-                <a href="projet.html" class="text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5">Mes projets</a>
+                <a href="projet.html" class="text-sm font-bold text-white border-b-2 border-purple-500 pb-0.5" id="nav-active-border">Mes projets</a>
                 <a href="competences.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Compétences</a>
                 <a href="notes.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Mes Notes</a>
                 <a href="parcours.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Parcours</a>
@@ -41,41 +46,266 @@
         </div>
     </nav>
 
-    <main class="pt-40 max-w-6xl mx-auto px-6 min-h-screen">
-        <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-medium tracking-wide mb-4">
-                Projets Universitaires
-            </div>
+    <main class="pt-40 max-w-7xl mx-auto px-6 min-h-screen">
+        <div class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Mes Projets Académiques</h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
                 Explorez mes réalisations techniques réparties par année d'études.
             </p>
+
+            <div class="flex flex-wrap justify-center gap-4 bg-white/5 p-2 rounded-2xl inline-flex border border-white/10 backdrop-blur-sm">
+                <button id="btn-year1" onclick="toggleProjects('year1')" class="px-6 py-2.5 rounded-xl text-sm font-bold transition-all text-slate-400 hover:text-white">
+                    1ère Année (2024-2025)
+                </button>
+                <button id="btn-year2" onclick="toggleProjects('year2')" class="px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-purple-500/20 text-purple-400 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                    2ème Année (2025-2026)
+                </button>
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <a href="projet-but1.html" class="glass p-10 rounded-3xl group hover-card border border-blue-500/20 hover:border-blue-500/50 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
-                <div class="text-blue-500 text-4xl mb-6"><i class="fas fa-folder-open"></i></div>
-                <h2 class="text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">Projets 1ère Année</h2>
-                <p class="text-slate-400 mb-6 leading-relaxed">
-                    Découvrez mes 9 premiers projets (2024-2025) : automatisation Excel/VBA, bases de données SQL, analyse de données et algorithmique Python.
-                </p>
-                <div class="flex items-center gap-2 text-blue-400 font-bold uppercase text-xs tracking-widest">
-                    Explorer <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+        <div id="grid-year2" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+            <a href="projet-shiny.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-purple flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-shiny.jpg" alt="Interface RShiny" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Avril 2026</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#RShiny</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Clustering</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Analyse Multivariée Territoriale</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-purple-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <a href="projet-but2.html" class="glass p-10 rounded-3xl group hover-card border border-purple-500/20 hover:border-purple-500/50 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-3xl rounded-full"></div>
-                <div class="text-purple-500 text-4xl mb-6"><i class="fas fa-layer-group"></i></div>
-                <h2 class="text-3xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">Projets 2ème Année</h2>
-                <p class="text-slate-400 mb-6 leading-relaxed">
-                    Découvrez mes 6 projets avancés (2025-2026) : Machine Learning, Data Warehouse, développement Full-Stack, RShiny et analyses spatiales (SIG).
-                </p>
-                <div class="flex items-center gap-2 text-purple-400 font-bold uppercase text-xs tracking-widest">
-                    Explorer <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            <a href="projet-ml.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-purple flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-ml.jpg" alt="Machine Learning Python" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Mars 2026</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-yellow-500/20 text-yellow-500">#Python</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#MachineLearning</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Prédiction Qualité du Vin (ML)</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-purple-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
                 </div>
             </a>
+
+            <a href="projet-sportone.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-purple flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-dw.jpg" alt="Data Warehouse Talend" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Janvier 2026</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-orange-500/20 text-orange-400">#Talend</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#DataWarehouse</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Entrepôt de données SportOne</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-purple-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet-sig.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-purple flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-sig.jpg" alt="Cartographie QGIS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Décembre 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#QGIS</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-pink-500/20 text-pink-400">#Cartographie</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Analyse Spatiale (SIG)</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-purple-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet-web.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-purple flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-web.jpg" alt="Interface Application Web" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Novembre 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#PHP</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#MySQL</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Application Web PHP</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-purple-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet-doe.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-purple flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-doe.jpg" alt="Plan d'expériences 3D" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Octobre 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#R</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/20 text-cyan-400">#Optimisation</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Plan d'Expériences</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-purple-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+        </div>
+
+        <div id="grid-year1" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 hidden fade-in">
+            <a href="projet-analyse.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-calyxis.jpg" alt="Projet Calyxis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Juin 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Python</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-yellow-500/20 text-yellow-500">#PowerBI</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Analyse & DataViz (Calyxis)</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet8.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet8.png" alt="Graphiques d'échantillonnage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Juin 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#R</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Statistiques</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Échantillonnage et Estimation</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet-indicateurs.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-indicateurs.jpg" alt="Ratios financiers Excel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Mai 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Finance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Indicateurs de Performances</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet6.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet6.PNG" alt="Modèle conceptuel de données" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Avril 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-pink-500/20 text-pink-400">#SQL</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Python</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Conception BDD (Sel Marin)</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet7.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet7.PNG" alt="Régression linéaire sous R" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Avril 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#R</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Statistiques</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Régression Valeur Foncière</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet4.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet5.PNG" alt="Application VBA Excel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Janvier 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-yellow-500/20 text-yellow-500">#VBA</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Reporting Automatisé</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet3.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet4.PNG" alt="Analyse électorale Excel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Décembre 2024</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-400">#Excel</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Statistiques</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Analyse Électorale NFP</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet-gestion.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet-gestion.jpg" alt="Code Python dans VSCode" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Octobre 2024</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Python</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-orange-500/20 text-orange-400">#Algorithmique</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Gestion de Fichiers</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="projet1.html" class="group glass rounded-2xl overflow-hidden hover-card hover-card-blue flex flex-col h-full border border-white/5">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="img/projet1.PNG" alt="Présentation Ville Olympique" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C15] to-transparent opacity-90"></div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-white border border-white/10">Octobre 2024</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400">#Économie</span>
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/20 text-purple-400">#Analyse</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Ville Olympique Saint-Louis</h3>
+                    <div class="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-slate-300 group-hover:text-blue-400 transition-colors">En savoir plus <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
         </div>
     </main>
 
@@ -85,7 +315,6 @@
                 <span class="text-xl font-extrabold text-white">Nolan<span class="text-blue-500">.</span></span>
                 <p class="text-sm text-slate-500 mt-1">Étudiant en Science des Données - IUT de Niort</p>
             </div>
-            
             <div class="flex gap-4">
                 <a href="https://www.linkedin.com/in/nolan-fontaine-030948300/" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all">
                     <i class="fab fa-linkedin-in"></i>
@@ -93,5 +322,61 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleProjects(year) {
+            const gridYear1 = document.getElementById('grid-year1');
+            const gridYear2 = document.getElementById('grid-year2');
+            const btnYear1 = document.getElementById('btn-year1');
+            const btnYear2 = document.getElementById('btn-year2');
+            
+            // Éléments de thème (pour correspondre au code couleur de chaque année)
+            const bgGlow = document.getElementById('bg-glow');
+            const logoDot = document.getElementById('logo-dot');
+            const navActiveBorder = document.getElementById('nav-active-border');
+            
+            // Retirer l'animation pour pouvoir la rejouer
+            gridYear1.classList.remove('fade-in');
+            gridYear2.classList.remove('fade-in');
+            
+            // Petit délai forcé pour que le navigateur prenne en compte la suppression de l'animation
+            void gridYear1.offsetWidth;
+            
+            if (year === 'year1') {
+                // Afficher année 1
+                gridYear1.classList.remove('hidden');
+                gridYear2.classList.add('hidden');
+                gridYear1.classList.add('fade-in');
+                
+                // Activer le style Bouton 1 (Bleu)
+                btnYear1.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-blue-500/20 text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)]";
+                // Désactiver le style Bouton 2
+                btnYear2.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all text-slate-400 hover:text-white";
+                
+                // Changer le thème global de la page vers Bleu
+                document.body.className = "overflow-x-hidden selection:bg-blue-500 selection:text-white pb-10";
+                bgGlow.className = "fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] -z-10 pointer-events-none transition-colors duration-700";
+                logoDot.className = "text-blue-500 transition-colors duration-500";
+                navActiveBorder.className = "text-sm font-bold text-white border-b-2 border-blue-500 pb-0.5 transition-colors duration-500";
+                
+            } else {
+                // Afficher année 2
+                gridYear2.classList.remove('hidden');
+                gridYear1.classList.add('hidden');
+                gridYear2.classList.add('fade-in');
+                
+                // Activer le style Bouton 2 (Violet)
+                btnYear2.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-purple-500/20 text-purple-400 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.2)]";
+                // Désactiver le style Bouton 1
+                btnYear1.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all text-slate-400 hover:text-white";
+                
+                // Changer le thème global de la page vers Violet
+                document.body.className = "overflow-x-hidden selection:bg-purple-500 selection:text-white pb-10";
+                bgGlow.className = "fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] -z-10 pointer-events-none transition-colors duration-700";
+                logoDot.className = "text-purple-500 transition-colors duration-500";
+                navActiveBorder.className = "text-sm font-bold text-white border-b-2 border-purple-500 pb-0.5 transition-colors duration-500";
+            }
+        }
+    </script>
 </body>
 </html>
